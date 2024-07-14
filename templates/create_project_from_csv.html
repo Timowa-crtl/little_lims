@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create Projects from CSV
+{% endblock %}
+
+{% block main %}
+<h3 style="color:green">Create Projects from CSV</h3>
+<form action="/projects/create/csv" method="post" enctype="multipart/form-data">
+    <label for="file">Upload CSV File:</label><br>
+    <input type="file" id="file" name="file" accept=".csv"><br>
+
+    <input type="submit" value="Upload">
+</form>
+
+{% endblock %}

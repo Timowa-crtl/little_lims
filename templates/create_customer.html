@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create Customer
+{% endblock %}
+
+{% block main %}
+<h3 style="color:green">Create New Customer</h3>
+<form action="/customers/create" method="post">
+    <label for="name">Customer Name:</label><br>
+    <input type="text" id="name" name="name"><br>
+
+    <input type="submit" value="Create Customer">
+</form>
+{% endblock %}

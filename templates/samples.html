@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Samples
+{% endblock %}
+
+{% block main %}
+<h3 style="color:green">Samples</h3>
+<div class="filter-buttons-container">
+    <a href="/samples/create" class="btn btn-create-project">Add Samples</a>
+    <a href="/samples/createfromtable" class="btn btn-create-project">Add Samples From Table</a>
+    <!-- Add input field for filtering -->
+    <input type="text" id="sampleFilter" placeholder="Filter samples">
+</div>
+
+<table id="samplesTable">
+    <thead>
+        <tr>
+            <th>Sample ID</th>
+            <th>Customer Name</th>
+            <th>Sample Name</th>
+            <th>Customer Label</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for sample in samples %}
+        <tr>
+            <td>{{ sample.sample_id }}</td>
+            <td>{{ sample.customer_name }}</td>
+            <td>{{ sample.sample_name }}</td>
+            <td>{{ sample.customer_label }}</td>
+            <td>{{ sample.sample_status }}</td>
+            <td>
+                <a href="/samples/edit/{{ sample.sample_id }}" class="btn btn-sm btn-primary">Edit</a> <!-- Button linking to edit_sample -->
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<script>
+    // Function to filter the table
+    function filterTable(sampleFilter) {
+        // Declare variables
+        var filter, table, tr, td, i, txtValue;
+        filter = sampleFilter.value.toUpperCase();
+        table = document.getElementById("samplesTable");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, hide those that don't contain the filter query
+        for (i = 1; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td");
+            var visible = false;
+            for (var j = 0; j < td.length; j++) {
+                var cell = td[j];
+                if (cell) {
+                    txtValue = cell.textContent || cell.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        visible = true;
+                        break;
+                    }
+                }
+            }
+            // Show or hide row based on visibility
+            tr[i].style.display = visible ? "" : "none";
+        }
+    }
+
+    // Add event listener to input field for filtering
+    var sampleFilterInput = document.getElementById("sampleFilter");
+    sampleFilterInput.addEventListener("input", function() {
+        filterTable(sampleFilterInput);
+    });
+
+    // Retrieve the filter value from URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const filterValue = urlParams.get('filter');
+
+    // Set the filter input field value
+    sampleFilterInput.value = filterValue;
+
+    // Filter the table once the page has loaded
+    filterTable(sampleFilterInput);
+</script>
+
+{% endblock %}

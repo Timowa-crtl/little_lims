@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Customers
+{% endblock %}
+
+{% block main %}
+<h3 style="color:green">Customers</h3>
+<div class="filter-buttons-container">
+    <a href="/customers/create" class="btn btn-create-project">Create Customer</a>
+    <!-- Add input field for filtering -->
+    <input type="text" id="customersFilter" placeholder="Filter Customers">
+</div>
+
+<table id="customersTable">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Creation Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for customer in customers %}
+        <tr>
+            <td>{{ customer.id }}</td>
+            <td>{{ customer.name }}</td>
+            <td>{{ customer.creation_date }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<script>
+    // Add event listener to input field for filtering
+    document.getElementById("customersFilter").addEventListener("input", filterTable);
+
+    function filterTable() {
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue;
+        input = this;
+        filter = input.value.toUpperCase();
+        table = document.getElementById("customersTable");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those that don't contain the filter query
+        for (i = 1; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td");
+            var visible = false;
+            for (var j = 0; j < td.length; j++) {
+                var cell = td[j];
+                if (cell) {
+                    txtValue = cell.textContent || cell.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        visible = true;
+                        break;
+                    }
+                }
+            }
+            // Show or hide row based on visibility
+            tr[i].style.display = visible ? "" : "none";
+        }
+    }
+</script>
+{% endblock %}

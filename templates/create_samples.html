@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Sample
+{% endblock %}
+
+{% block main %}
+<h3 style="color:green">Add New Sample</h3>
+<form action="/samples/create" method="post">
+    <label for="project_id">Project ID:</label><br>
+    <select name="project_id" id="project_id">
+        {% for project in projects %}
+        <option value="{{ project.id }}">{{ project.id }}</option>
+        {% endfor %}
+    </select><br>
+
+    <label for="sample_name">Sample Name:</label><br>
+    <input type="text" id="sample_name" name="sample_name"><br>
+
+    <label for="customer_label">Customer Label:</label><br>
+    <input type="text" id="customer_label" name="customer_label"><br>
+
+    <input type="submit" value="Add Sample">
+</form>
+{% endblock %}
+
+
+

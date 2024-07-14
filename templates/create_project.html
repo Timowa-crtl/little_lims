@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create Project
+{% endblock %}
+
+{% block main %}
+<h3 style="color:green">Create New Project</h3>
+<form action="/projects/create" method="post">
+    <label for="customer_name">Customer Name:</label><br>
+    <select name="customer_name" id="customer_name">
+        {% for customer in customers %}
+        <option value="{{ customer.name }}">{{ customer.name }}</option>
+        {% endfor %}
+    </select><br>
+
+    <label for="project_id">Project ID:</label><br>
+    <input type="text" id="project_id" name="project_id"><br>
+
+    <label for="workflow">Workflow:</label><br>
+    <select name="workflow" id="workflow">
+        <option value="shotgun">Shotgun</option>
+        <option value="targeted">Targeted</option>
+    </select><br>
+
+    <input type="submit" value="Create Project">
+</form>
+{% endblock %}

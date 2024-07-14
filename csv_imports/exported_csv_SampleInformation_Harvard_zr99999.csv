@@ -1,0 +1,11 @@
+id,customer_name,project_id,regions,bi_analysis,group_comp,sample_id,sample_name,customer_label,arrival_date,notes
+1,Harvard,zr99999,WGS,no,no,zr99999_1,sample.name_1,customer_label_1,,
+2,Harvard,zr99999,WGS,no,no,zr99999_2,sample.name_2,customer_label_2,,
+3,Harvard,zr99999,WGS,no,no,zr99999_3,sample.name_3,customer_label_3,,
+4,Harvard,zr99999,WGS,no,no,zr99999_4,sample.name_4,customer_label_4,,
+5,Harvard,zr99999,WGS,no,no,zr99999_5,sample.name_5,customer_label_5,,
+6,Harvard,zr99999,WGS,no,no,zr99999_6,sample.name_6,customer_label_6,,
+7,Harvard,zr99999,WGS,no,no,zr99999_7,sample.name_7,customer_label_7,,
+8,Harvard,zr99999,WGS,no,no,zr99999_8,sample.name_8,customer_label_8,,
+9,Harvard,zr99999,WGS,no,no,zr99999_9,sample.name_9,customer_label_9,,
+10,Harvard,zr99999,WGS,no,no,zr99999_10,sample.name_10,customer_label_10,,

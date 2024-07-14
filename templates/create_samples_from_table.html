@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Samples from Table
+{% endblock %}
+
+{% block main %}
+<h3 style="color:green">Add Samples from Table</h3>
+<form action="/samples/createfromtable" method="post">
+    <label for="project_id">Project ID:</label><br>
+    <select name="project_id" id="project_id">
+        {% for project in projects %}
+        <option value="{{ project.id }}">{{ project.id }}</option>
+        {% endfor %}
+    </select><br>
+
+    <label for="sample_table">Sample Table (Paste table with sample names on the left and customer labels on the right (.csv or .tsv)):</label><br>
+    <textarea id="sample_table" name="sample_table" rows="10" cols="50"></textarea><br>
+
+    <input type="submit" value="Add Samples">
+</form>
+{% endblock %}

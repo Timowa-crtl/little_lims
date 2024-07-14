@@ -1,0 +1,168 @@
+/* special colors */
+:root {
+    --special-green: #00843D;
+    --special-yellow: #FEDD00;
+    --special-green-faint: #EDF6F1;
+    --dark-grey: #3A4249;
+    --special-green-light: #99CEB1;
+    --special-yellow-faint: #FFFAD9;
+    --special-yellow-light: #FEEB66;
+    --special-green-less-faint: #F2F9F5;
+    --header-height: 105px;
+    --header-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, .2);
+    --search-menu-max-height: 500px;
+    --search-menu-max-height-mobile: 350px;
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #ffffff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --input-width: 340px; /* Define the width variable */
+}
+
+/* Size for brand if text */
+nav .navbar-brand {
+    font-size: xx-large;
+}
+
+nav .brand-logo {
+    max-width: 200px; /* Set the maximum width */
+    max-height: 60px; /* Set the maximum height */
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue {
+    color: #537fbe;
+}
+nav .navbar-brand .red {
+    color: #ea433b;
+}
+nav .navbar-brand .yellow {
+    color: var(--special-yellow);
+}
+nav .navbar-brand .green {
+    color: var(--special-green); /* Change to special green */
+}
+
+
+table {
+    width: auto; /* Allow table to adjust width based on content */
+    border-collapse: collapse;
+    margin: 0 auto; /* Center table horizontally */
+    margin-bottom: 20px;
+    background-color: var(--special-green-faint); /* Change background color to special green faint */
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 0px 5px; /* top and bottom, left and right */
+    text-align: left;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+tr {
+    background-color: #f2f2f2; /* Set background color for all rows */
+    height: 10px; /* Adjust the height for rows */
+}
+
+th {
+    border: 1px solid #ddd;
+    padding: 0px 5px; /* top and bottom, left and right */
+    text-align: left;
+    background-color: var(--special-green); /* Change background color to special green */
+    color: white;
+    white-space: normal; /* Allow line breaks in table headers */
+    height: 40px;
+}
+
+.btn-create-project {
+    background-color: var(--special-green);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+/* Hover effect for the button */
+.btn-create-project:hover {
+    background-color: var(--special-yellow); /* Change hover color to special green light */
+}
+
+.filter-buttons-container {
+    margin-bottom: 20px; /* Add some bottom margin for spacing */
+}
+
+.filter-buttons-container input {
+    margin-right: 10px; /* Add right margin to separate the input field and buttons */
+}
+
+.btn-primary {
+    background-color: var(--gray);
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--special-yellow);
+    color: black;
+}
+
+.btn-danger {
+    background-color: var(--gray); /* background color */
+    color: white; /* text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding around the text */
+    margin-top: 10px; /* space between the buttons */
+    cursor: pointer; /* Show pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.btn-danger:hover {
+    background-color: var(--red);
+}
+
+
+.form-control {
+    width: var(--input-width); /* Adjust the width as needed */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+.form-label {
+    width: var(--input-width); /* Adjust the width as needed */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+.form-select {
+    width: var(--input-width); /* Adjust the width as needed */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+.container {
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+.center-input {
+    text-align: center; /* Center the input fields horizontally */
+        margin: 0 auto; /* Center the container horizontally */
+}
