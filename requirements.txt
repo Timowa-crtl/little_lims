@@ -1,12 +1,7 @@
 Flask
 Flask-Session
 cs50
-csv
-functools
-os
 pandas
 pytz
 requests
-urllib
-uuid
 werkzeug
