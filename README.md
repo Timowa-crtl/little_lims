@@ -25,7 +25,7 @@ LittleLIMS is a lightweight Laboratory Information Management System (LIMS) web 
 
 1. Clone the repository to your local machine.
 2. Install the required dependencies listed in the `requirements.txt` file.
-3. Run the Flask application using the `flask run` command.
+3. Run the Flask application using the `python3 -m flask run` command.
 4. Access the application through a web browser at `http://localhost:5000`.
 
 ### Usage
